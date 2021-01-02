@@ -3,11 +3,19 @@
         <h3 class="text-center">Login Form</h3>
         <div class="form-group">
             <input placeholder="Username" type="email" class="form-control" formControlName="user_name" class="rounded-0 form-control border-top-0 border-left-0 border-right-0">
-            <span *ngIf="loginForm.get['user_name']!.touched && loginForm.get['user_name']!.hasError('required')">Please enter username</span>
+            <span class="text-danger" *ngIf="loginForm.get('user_name')!.touched && loginForm.get('user_name')!.hasError('required')">Please enter username</span>
         </div>
 
         <div class="form-group">
             <input placeholder="Password" type="password" formControlName="userPass" class="rounded-0 form-control border-top-0 border-left-0 border-right-0">
+
+            <span class="text-danger" *ngIf="loginForm.get('userPass')!.touched && loginForm.get('userPass')!.hasError('required')">Please enter Password'</span>
+            <span class="text-danger" *ngIf="userPass?.errors!.minlength">Minimum 8 character is required.</span>
+            <span class="text-danger" *ngIf="userPass?.errors!.maxlength">Maximum 16 character are allowed.</span>
+
+
+
+
         </div>
 
         <div class="text-center">
@@ -15,5 +23,3 @@
         </div>
     </form>
 </div>
-
-<!--  hua nh babu dekhne do ok khi abstract control class use ki hai?ye kya hoti hai ok-->
