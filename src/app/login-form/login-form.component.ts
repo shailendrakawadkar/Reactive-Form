@@ -23,7 +23,7 @@ get userPass() {
   loginForm = this.fb.group({
 
     user_name: ['', [Validators.required, Validators.email]],
-    userPass: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]]
+    userPass: ['', [Validators.required, Validators.minLength(8)]]
   })
   ngOnInit(): void {
 

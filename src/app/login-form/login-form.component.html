@@ -9,15 +9,15 @@
 
         <div class="form-group">
             <input placeholder="Password" type="password" formControlName="userPass" class="rounded-0 form-control border-top-0 border-left-0 border-right-0">
-
-            <span class="text-danger" *ngIf="loginForm.get('userPass')!.touched && loginForm.get('userPass')!.hasError('required')">Please
-                enter Password'</span>
-            <span class="text-danger" *ngIf="userPass?.errors!.minlength && userPass?.invalid">Minimum 8 character is required.</span>
-            <span class="text-danger" *ngIf="userPass?.errors!.maxlength">Maximum 16 character are allowed.</span>
+            <div *ngIf="userPass?.invalid">
+                <span class="text-danger" *ngIf="loginForm.get('userPass')!.touched && loginForm.get('userPass')!.hasError('required')">Please
+                    enter Password'</span>
+                <span class="text-danger" *ngIf="userPass?.errors!.minlength">Minimum 8 character is required.</span>
+            </div>
         </div>
 
         <div class="text-center">
-            <button class="w-50" [ngclass]="!loginForm.valid ? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="!loginForm.invalid"> Login </button>
+            <button class="w-50" [ngClass]="!loginForm.valid ? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="!loginForm.valid"> Login </button>
         </div>
     </form>
 </div>

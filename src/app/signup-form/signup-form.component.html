@@ -1,1 +1,24 @@
-<p>signup-form works!</p>
+<div class="container shadow-lg p-5 mb-5 mt-5 bg-white">
+    <h3 class="text-center">Signup Form</h3>
+    <form [formGroup]="signupForm">
+        <div class="form-group">
+            <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" [class.is-invalid]="name!.invalid && name!.touched" placeholder="Full Name" type="text" formControlName="name">
+            <span *ngIf="name" class="text-danger">Please Enter Full Name Correctly.</span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control  border-top-0 border-left-0 border-right-0 rounded-0" [class.is-invalid]="email!.invalid && email!.touched" placeholder="Email Address" type="email" formControlName="email">
+            <span *ngIf="email" class="text-danger">Please Enter Email Correctly.</span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control  border-top-0 border-left-0 border-right-0 rounded-0" [class.is-invalid]="pass!.invalid && pass!.touched" placeholder="Password" type="password" formControlName="pass">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control  border-top-0 border-left-0 border-right-0 rounded-0" [class.is-invalid]="re_pass!.invalid && name!.touched" placeholder="Re-Type Password" type="password" formControlName="re_pass">
+        </div>
+
+        <button class="btn  w-50" [ngClass]="signupForm.valid ? 'btn-primary' : 'btn-secondary'" [disabled]="!signupForm.valid">Continue</button> {{signupForm.value | json}}
+    </form>
+</div>
