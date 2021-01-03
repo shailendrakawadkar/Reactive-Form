@@ -20,4 +20,12 @@
             <button class="w-50" [ngClass]="!loginForm.valid ? 'btn btn-secondary' : 'btn btn-primary'" [disabled]="!loginForm.valid"> Login </button>
         </div>
     </form>
+    <div class="row text-center pt-5">
+        <div class="col">
+            <p>New User ?</p>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-danger" routerLink="/signup">Create New Account</button>
+        </div>
+    </div>
 </div>

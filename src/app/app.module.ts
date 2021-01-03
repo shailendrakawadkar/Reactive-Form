@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { CustomValidationsDirective } from './shared/custom-validations.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    CustomValidationsDirective
   ],
   imports: [
     BrowserModule,

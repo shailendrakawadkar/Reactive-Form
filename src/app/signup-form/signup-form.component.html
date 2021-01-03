@@ -3,12 +3,12 @@
     <form [formGroup]="signupForm">
         <div class="form-group">
             <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" [class.is-invalid]="name!.invalid && name!.touched" placeholder="Full Name" type="text" formControlName="name">
-            <span *ngIf="name" class="text-danger">Please Enter Full Name Correctly.</span>
+            <span *ngIf="name!.invalid && name!.touched" class="text-danger">Please Enter Full Name Correctly.</span>
         </div>
 
         <div class="form-group">
             <input class="form-control  border-top-0 border-left-0 border-right-0 rounded-0" [class.is-invalid]="email!.invalid && email!.touched" placeholder="Email Address" type="email" formControlName="email">
-            <span *ngIf="email" class="text-danger">Please Enter Email Correctly.</span>
+            <span *ngIf="email!.invalid && email!.touched" class="text-danger">Please Enter Email Correctly.</span>
         </div>
 
         <div class="form-group">

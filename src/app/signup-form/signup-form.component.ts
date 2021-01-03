@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import '../shared/custom-validations.directive'; 
+import { matchPass } from '../shared/validtor';
 
 @Component({
   selector: 'app-signup-form',
@@ -30,7 +32,7 @@ export class SignupFormComponent implements OnInit {
     name    : ['', Validators.required],
     email   : ['', Validators.required],
     pass    : ['', Validators.required],
-    re_pass : ['', Validators.required],
+    re_pass : ['', [Validators.required, matchPass]],
   });
 
   ngOnInit(): void {
