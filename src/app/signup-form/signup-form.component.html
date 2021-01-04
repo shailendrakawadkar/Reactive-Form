@@ -17,6 +17,7 @@
 
         <div class="form-group">
             <input class="form-control  border-top-0 border-left-0 border-right-0 rounded-0" [class.is-invalid]="re_pass!.invalid && name!.touched" placeholder="Re-Type Password" type="password" formControlName="re_pass">
+            <span *ngIf="re_pass!.matchPass.isError">Password Mismatch.</span>
         </div>
 
         <button class="btn  w-50" [ngClass]="signupForm.valid ? 'btn-primary' : 'btn-secondary'" [disabled]="!signupForm.valid">Continue</button> {{signupForm.value | json}}
